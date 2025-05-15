@@ -1,0 +1,82 @@
+2025-05-14 00:01:23,966: Exception on /room_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 739, in room_stats
+    plt.savefig(buf, format='png')
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/pyplot.py", line 977, in savefig
+    res = fig.savefig(*args, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/figure.py", line 3058, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2319, in print_figure
+    result = print_method(
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 1648, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/_api/deprecation.py", line 415, in wrapper
+    return func(*inner_args, **inner_kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 540, in print_png
+    FigureCanvasAgg.draw(self)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 436, in draw
+    self.figure.draw(self.renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/artist.py", line 74, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/artist.py", line 51, in draw_wrapper
+    return draw(artist, renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/figure.py", line 2844, in draw
+    self.patch.draw(renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/artist.py", line 51, in draw_wrapper
+    return draw(artist, renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/patches.py", line 618, in draw
+    draw_path(tpath, affine,
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 170, in draw_path
+    self._renderer.draw_path(gc, path, transform, rgbFace)
+ValueError: object __array__ method not producing an array
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 879, in financial_stats
+    plt.savefig(buf, format='png')
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/pyplot.py", line 977, in savefig
+    res = fig.savefig(*args, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/figure.py", line 3058, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2319, in print_figure
+    result = print_method(
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 1648, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/_api/deprecation.py", line 415, in wrapper
+    return func(*inner_args, **inner_kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 540, in print_png
+    FigureCanvasAgg.draw(self)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 436, in draw
+    self.figure.draw(self.renderer)
+2025-05-14 00:01:30,568: Exception on /financial_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/artist.py", line 74, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/artist.py", line 51, in draw_wrapper
+    return draw(artist, renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/figure.py", line 2844, in draw
+    self.patch.draw(renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/artist.py", line 51, in draw_wrapper
+    return draw(artist, renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/patches.py", line 618, in draw
+    draw_path(tpath, affine,
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 170, in draw_path
+    self._renderer.draw_path(gc, path, transform, rgbFace)
+ValueError: object __array__ method not producing an array

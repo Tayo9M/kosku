@@ -1,0 +1,111 @@
+2025-05-14 00:20:27,600: Exception on /room_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 706, in room_stats
+    room_types=json.dumps(room_types),
+NameError: name 'json' is not defined
+2025-05-14 00:20:51,779: Exception on /financial_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 806, in financial_stats
+    months=json.dumps(months),
+NameError: name 'json' is not defined
+2025-05-14 00:33:14,916: Exception on /room_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 695, in room_stats
+    return render_template(
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: room_stats_no_chart.html
+2025-05-14 00:33:19,227: Exception on /financial_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 782, in financial_stats
+    return render_template(
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: financial_stats_no_chart.html
+2025-05-14 00:33:58,778: Exception on /room_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 695, in room_stats
+    return render_template(
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/jinja2/loaders.py", line 126, in load

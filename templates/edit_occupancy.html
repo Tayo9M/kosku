@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 mb-4">
+            <i class="fas fa-edit"></i> Edit Data Hunian
+        </h1>
+        <p class="lead">
+            Edit data hunian untuk Kamar <strong>{{ room.number }}</strong> di properti <strong>{{ property.name }}</strong> untuk bulan <strong>{{ record.month }}</strong>
+        </p>
+    </div>
+</div>
+
+<div class="card border-0 shadow">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0"><i class="fas fa-pencil-alt"></i> Form Edit Data Hunian</h5>
+    </div>
+    <div class="card-body">
+        <form method="POST" action="{{ url_for('edit_occupancy', record_id=record.id) }}">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label">Properti:</label>
+                        <input type="text" class="form-control" value="{{ property.name }}" readonly>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label">Nomor Kamar:</label>
+                        <input type="text" class="form-control" value="{{ room.number }}" readonly>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label">Bulan:</label>
+                        <input type="text" class="form-control" value="{{ record.month }}" readonly>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label">Tipe Kamar:</label>
+                        <input type="text" class="form-control" value="{{ room.room_type }}" readonly>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label">Tarif Bulanan:</label>
+                        <input type="text" class="form-control" value="Rp {{ "{:,}".format(room.monthly_rate).replace(',', '.') }}" readonly>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-check form-switch mt-4">
+                        <input class="form-check-input" type="checkbox" id="is_occupied" name="is_occupied" {% if record.is_occupied %}checked{% endif %}>
+                        <label class="form-check-label" for="is_occupied">Kamar Terisi</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" for="tenant_name">Nama Penyewa:</label>
+                        <input type="text" class="form-control" id="tenant_name" name="tenant_name" value="{{ record.tenant_name or '' }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" for="payment_status">Status Pembayaran:</label>
+                        <select class="form-select" id="payment_status" name="payment_status">
+                            <option value="unpaid" {% if record.payment_status == 'unpaid' %}selected{% endif %}>Belum Bayar</option>
+                            <option value="paid" {% if record.payment_status == 'paid' %}selected{% endif %}>Sudah Bayar</option>
+                            <option value="late" {% if record.payment_status == 'late' %}selected{% endif %}>Terlambat</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label" for="payment_due_date">Tanggal Jatuh Tempo:</label>
+                        <input type="date" class="form-control" id="payment_due_date" name="payment_due_date" 
+                               value="{% if record.payment_due_date %}{{ record.payment_due_date.strftime('%Y-%m-%d') }}{% endif %}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label" for="payment_date">Tanggal Pembayaran:</label>
+                        <input type="date" class="form-control" id="payment_date" name="payment_date" 
+                               value="{% if record.payment_date %}{{ record.payment_date.strftime('%Y-%m-%d') }}{% endif %}">
+                        <small class="form-text text-muted">Isi hanya jika status sudah dibayar</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-label" for="payment_months">Jumlah Bulan Dibayar:</label>
+                        <input type="number" class="form-control" id="payment_months" name="payment_months" 
+                               value="{{ record.payment_months or 1 }}" min="1" max="12">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="notes">Catatan:</label>
+                        <textarea class="form-control" id="notes" name="notes" rows="3">{{ record.notes or '' }}</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Simpan Perubahan
+                </button>
+                <a href="{{ url_for('manage_occupancy') }}" class="btn btn-secondary">
+                    <i class="fas fa-times"></i> Batal
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Toggle form field states based on is_occupied checkbox and payment status
+    document.addEventListener('DOMContentLoaded', function() {
+        const isOccupiedCheckbox = document.getElementById('is_occupied');
+        const tenantNameInput = document.getElementById('tenant_name');
+        const paymentStatusSelect = document.getElementById('payment_status');
+        const paymentDueDateInput = document.getElementById('payment_due_date');
+        const paymentDateInput = document.getElementById('payment_date');
+        const paymentMonthsInput = document.getElementById('payment_months');
+        
+        function updateFieldStates() {
+            const isDisabled = !isOccupiedCheckbox.checked;
+            tenantNameInput.disabled = isDisabled;
+            paymentStatusSelect.disabled = isDisabled;
+            paymentDueDateInput.disabled = isDisabled;
+            paymentMonthsInput.disabled = isDisabled;
+            
+            // Payment date hanya aktif jika kamar terisi dan status pembayaran "paid"
+            const isPaymentDateDisabled = isDisabled || paymentStatusSelect.value !== 'paid';
+            paymentDateInput.disabled = isPaymentDateDisabled;
+            
+            if (isDisabled) {
+                tenantNameInput.value = '';
+                paymentStatusSelect.value = 'unpaid';
+            }
+            
+            // Jika status pembayaran bukan "paid", kosongkan tanggal pembayaran
+            if (paymentStatusSelect.value !== 'paid') {
+                paymentDateInput.value = '';
+            }
+        }
+        
+        // Initialize field states
+        updateFieldStates();
+        
+        // Update field states when checkbox or payment status changes
+        isOccupiedCheckbox.addEventListener('change', updateFieldStates);
+        paymentStatusSelect.addEventListener('change', updateFieldStates);
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,66 @@
+During handling of the above exception, another exception occurred:
+**NO MATCH**
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 216, in login
+    if user and user.check_password(password):
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./models.py", line 37, in check_password
+    return check_password_hash(self.password_hash, password)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/werkzeug/security.py", line 219, in check_password_hash
+    return hmac.compare_digest(_hash_internal(method, salt, password)[0], hashval)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/werkzeug/security.py", line 167, in _hash_internal
+    return hmac.new(salt, password, method).hexdigest(), method
+  File "/usr/local/lib/python3.9/hmac.py", line 170, in new
+    return HMAC(key, msg, digestmod)
+  File "/usr/local/lib/python3.9/hmac.py", line 65, in __init__
+    self._outer = self._digest_cons()
+  File "/usr/local/lib/python3.9/hmac.py", line 61, in <lambda>
+    self._digest_cons = lambda d=b'': _hashlib.new(digestmod, d)
+  File "/usr/local/lib/python3.9/hashlib.py", line 166, in __hash_new
+    return __get_builtin_constructor(name)(data)
+  File "/usr/local/lib/python3.9/hashlib.py", line 123, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type scrypt:32768:8:1
+2025-05-13 23:20:43,962: Exception on /login [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/hashlib.py", line 160, in __hash_new
+    return _hashlib.new(name, data, **kwargs)
+ValueError: [digital envelope routines] unsupported
+**NO MATCH**
+During handling of the above exception, another exception occurred:
+**NO MATCH**
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 216, in login
+    if user and user.check_password(password):
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./models.py", line 37, in check_password
+    return check_password_hash(self.password_hash, password)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/werkzeug/security.py", line 219, in check_password_hash
+    return hmac.compare_digest(_hash_internal(method, salt, password)[0], hashval)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/werkzeug/security.py", line 167, in _hash_internal
+    return hmac.new(salt, password, method).hexdigest(), method
+  File "/usr/local/lib/python3.9/hmac.py", line 170, in new
+    return HMAC(key, msg, digestmod)
+  File "/usr/local/lib/python3.9/hmac.py", line 65, in __init__
+    self._outer = self._digest_cons()
+  File "/usr/local/lib/python3.9/hmac.py", line 61, in <lambda>
+    self._digest_cons = lambda d=b'': _hashlib.new(digestmod, d)
+  File "/usr/local/lib/python3.9/hashlib.py", line 166, in __hash_new
+    return __get_builtin_constructor(name)(data)
+  File "/usr/local/lib/python3.9/hashlib.py", line 123, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type scrypt:32768:8:1

@@ -1,0 +1,37 @@
+2025-05-14 01:42:29,950: ModuleNotFoundError: No module named 'routes_api_fixed'
+2025-05-14 01:42:29,951:   File "/var/www/tayo9m_pythonanywhere_com_wsgi.py", line 20, in <module>
+2025-05-14 01:42:29,951:     raise e
+2025-05-14 01:42:29,951: 
+2025-05-14 01:42:29,951:   File "/var/www/tayo9m_pythonanywhere_com_wsgi.py", line 15, in <module>
+2025-05-14 01:42:29,951:     from main import app as application
+2025-05-14 01:42:29,951: 
+2025-05-14 01:42:29,952:   File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./main.py", line 21, in <module>
+2025-05-14 01:42:29,952:     import routes_api_fixed  # noqa: F401 - API untuk validasi data realtime
+2025-05-14 01:42:29,952: ***************************************************
+2025-05-14 01:42:29,952: If you're seeing an import error and don't know why,
+2025-05-14 01:42:29,952: we have a dedicated help page to help you debug: 
+2025-05-14 01:42:29,948: Error running WSGI application
+2025-05-14 01:42:35,095: Error running WSGI application
+2025-05-14 01:42:35,095: ModuleNotFoundError: No module named 'routes_api_fixed'
+2025-05-14 01:42:35,095:   File "/var/www/tayo9m_pythonanywhere_com_wsgi.py", line 20, in <module>
+2025-05-14 01:42:35,095:     raise e
+2025-05-14 01:42:35,095: 
+2025-05-14 01:42:35,095:   File "/var/www/tayo9m_pythonanywhere_com_wsgi.py", line 15, in <module>
+2025-05-14 01:42:35,096:     from main import app as application
+2025-05-14 01:42:35,096: 
+2025-05-14 01:42:35,096:   File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./main.py", line 21, in <module>
+2025-05-14 01:42:47,384: Error running WSGI application
+2025-05-14 01:42:47,385: ModuleNotFoundError: No module named 'routes_api_fixed'
+2025-05-14 01:42:47,385:   File "/var/www/tayo9m_pythonanywhere_com_wsgi.py", line 20, in <module>
+2025-05-14 01:42:47,385:     raise e
+2025-05-14 01:42:47,386: 
+2025-05-14 01:42:47,386:   File "/var/www/tayo9m_pythonanywhere_com_wsgi.py", line 15, in <module>
+2025-05-14 01:42:47,386:     from main import app as application
+2025-05-14 01:42:47,386: 
+2025-05-14 01:42:47,386:   File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./main.py", line 21, in <module>
+2025-05-14 01:42:47,386:     import routes_api_fixed  # noqa: F401 - API untuk validasi data realtime
+2025-05-14 01:42:47,386: ***************************************************
+2025-05-14 01:42:47,386: If you're seeing an import error and don't know why,
+2025-05-14 01:42:47,386: we have a dedicated help page to help you debug: 
+2025-05-14 01:42:47,387: https://help.pythonanywhere.com/pages/DebuggingImportError/
+2025-05-14 01:42:47,387: ***************************************************

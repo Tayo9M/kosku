@@ -1,0 +1,70 @@
+-- Table Data Summary --
+
+=== users ===
+id | username | password_hash | role | location | created_at
+------------------------------------------------------------
+1 | admin | scrypt:32768:8:1$9LhLG4oAm05tqRI3$9918004a92b5dcb761a2b0e3b08dc3ede7cae42155de72bd0bc1b847d62224ce5fbe280bdbb0472abdbb7929fa097276e10e19d0bd4cf30fc0b5e1c1f90ec7fe | admin | NULL | 2025-05-12
+2 | karawang1 | scrypt:32768:8:1$BB9ItHrlSqLIQi0d$63275fcd5dfc62a8aad14511c85b5b4e1c5bc2562fa941f393f2349220e43079c0ac1c0d37f3538a3ccc21b07ae578fabd594324a266d2aa989853fe1160fbb2 | user | NULL | 2025-05-12
+3 | karawang2 | scrypt:32768:8:1$eA3v99dL8VICMNsr$89279799dce555a6cbad99ab31d83e14b59efeb57c7cbdb82a298b0452fc2c247130fc7d9cadb405d0d1b51d9d6a1f2169849eea9009d92ae96f7025a10d8f2a | user | NULL | 2025-05-12
+4 | bandung | scrypt:32768:8:1$mDc1lpaaMEuOY1ku$52ab88ade95b00c82e31fe8f0f76ff32d5f748eaa358240fcd305bf7b14dc4d1b856190e56c1439137c8d8616daa9dc18c931943840e8154031d5ed3ecf4d334 | user | NULL | 2025-05-12
+5 | manager1 | scrypt:32768:8:1$yOP17unOz3DEmu8T$e9933a3c9614d3c3aca3d60a026618bb84c87f0a335699fb96a8fa2de1b799671d513ab9145f82e1751ac6faa7aa596c31d9d9a2a29e6055c7c9bfde2cfe5727 | manager | KOS ANTAPANI | 2025-05-12
+7 | staff1 | scrypt:32768:8:1$PY8gMgiAlIdWxx1k$8308711eaf8e3237d5e85d45996c9ad80aae8200413a155fda5c682c42333b570bc6108e7a39f35e388160236d103b987e44b52d288e8a038fc2cb0b2fe9a758 | staff | KOS ANTAPANI | 2025-05-12
+8 | staff2 | scrypt:32768:8:1$1cxDcmav05CZKiuW$ce73c58ed6bef10f6a82c61c9a5a2aa8dec79098e7aeb3394ab25599dbecc1fb9adca2e8142fce79a6bd85a0c1d697607a50da88e961126c3ef0204ef4522611 | staff | KOS GURO | 2025-05-12
+9 | staff3 | scrypt:32768:8:1$XEjXeKsZ8v4Ybr8F$5567d4574894682d4af2361c2edf1a644ff0a1fb1dc53aa6ad45f2149b3388494097c59ee4ebcc8bf5cd0c8a7dbf805259360c0dc94087dfffe4d41228ecf135 | staff | KOS PESONA GRIYA | 2025-05-12
+10 | viewer1 | scrypt:32768:8:1$AutiYta2k593jjU5$7da02cc7b0bce739265bbbc294d1a4ee630a5aaf878176f07990d76df7b32c6a2c424c1b1e976e0e3d47c1a907860fabe69f34afa44cacade32ce6c47da7f22b | viewer |  | 2025-05-12
+11 | manager3 | scrypt:32768:8:1$zxY1Zen5kQ9QJmFR$13a9cfb6c73a8b1b11507c902c017a5109125ba665becd25388ffb68cffd8c60f5be8eebcf4cbe84d2488df33bc08e8035155f3b3a2c6d84207360f2d6148ead | manager | KOS PESONA GRIYA | 2025-05-12
+... 1 more rows
+
+=== properties ===
+id | name | address | total_rooms | created_at
+----------------------------------------------
+1 | KOS ANTAPANI | Antapani, Bandung | 10 | 2025-05-12
+2 | KOS GURO | Karawang | 8 | 2025-05-12
+3 | KOS PESONA GRIYA | Karawang | 12 | 2025-05-12
+
+=== national_holidays ===
+id | date | name | created_at
+-----------------------------
+1 | 2025-01-01 | Tahun Baru Masehi | 2025-05-12
+2 | 2025-03-31 | Hari Raya Nyepi | 2025-05-12
+3 | 2025-04-18 | Wafat Isa Almasih | 2025-05-12
+4 | 2025-05-01 | Hari Buruh | 2025-05-12
+5 | 2025-05-29 | Kenaikan Isa Almasih | 2025-05-12
+6 | 2025-06-01 | Hari Lahir Pancasila | 2025-05-12
+7 | 2025-06-06 | Hari Raya Idul Adha | 2025-05-12
+8 | 2025-07-17 | Tahun Baru Islam | 2025-05-12
+9 | 2025-08-17 | Hari Kemerdekaan RI | 2025-05-12
+10 | 2025-10-06 | Maulid Nabi Muhammad SAW | 2025-05-12
+... 1 more rows
+
+=== rooms ===
+id | number | property_id | room_type | monthly_rate | status | created_at
+--------------------------------------------------------------------------
+69 | ANT-Sta-3 | 1 | Standard | 0 | available | 2025-05-12
+70 | ANT-Sta-4 | 1 | Standard | 0 | available | 2025-05-12
+71 | ANT-Sta-5 | 1 | Standard | 0 | available | 2025-05-12
+72 | ANT-Sta-6 | 1 | Standard | 0 | available | 2025-05-12
+73 | ANT-Sta-7 | 1 | Standard | 0 | available | 2025-05-12
+74 | ANT-Sta-8 | 1 | Standard | 0 | available | 2025-05-12
+75 | ANT-Sta-9 | 1 | Standard | 0 | available | 2025-05-12
+76 | ANT-Sta-10 | 1 | Standard | 0 | available | 2025-05-12
+77 | ANT-Sta-11 | 1 | Standard | 0 | available | 2025-05-12
+78 | ANT-Eks-1 | 1 | Eksekutif | 0 | available | 2025-05-12
+... 76 more rows
+
+=== financial_records ===
+id | property_id | transaction_date | amount | transaction_type | category | description | created_at | created_by
+------------------------------------------------------------------------------------------------------------------
+1 | 1 | 2025-05-12 | 6200000 | income | Sewa | Pembayaran sewa oleh agus untuk 2 bulan (occupancy_id=2) | 2025-05-12 | 1
+2 | 1 | 2025-05-12 | 3100000 | income | Sewa | Pembayaran sewa oleh agus untuk 2 bulan (occupancy_id=3) | 2025-05-12 | 1
+3 | 3 | 2025-05-12 | 3600000 | income | Sewa | Pembayaran sewa kamar PES-Sta-1 (Standard) oleh yuli untuk 3 bulan | 2025-05-12 | 11
+4 | 3 | 2025-05-12 | 600000 | expense | Internet | dibayar menggunakan uang saya dulu nanti diganti ya | 2025-05-12 | 11
+5 | 3 | 2025-05-12 | 250000 | income | Layanan Tambahan | sewa tempat parkir bu Yuli | 2025-05-12 | 11
+
+=== occupancy_records ===
+id | room_id | month | is_occupied | tenant_name | notes | created_at | created_by | payment_status | payment_date | payment_due_date | payment_months
+------------------------------------------------------------------------------------------------------------------------------------------------------
+2 | 67 | 2025-05 | True | agus |  | 2025-05-12 | 5 | paid | NULL | 2025-07-22 | 2
+3 | 68 | 2025-05 | True | agus |  | 2025-05-12 | 5 | paid | NULL | 2025-07-22 | 2
+4 | 120 | 2025-05 | True | yuli | akan tinggal di karawang selama 3 bulan dan bekerja di Unsika | 2025-05-12 | 11 | paid | NULL | 2025-08-23 | 3
+

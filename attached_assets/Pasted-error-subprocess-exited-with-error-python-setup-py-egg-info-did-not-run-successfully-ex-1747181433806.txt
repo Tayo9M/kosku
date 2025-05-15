@@ -1,0 +1,36 @@
+error: subprocess-exited-with-error
+  
+  × python setup.py egg_info did not run successfully.
+  │ exit code: 1
+  ╰─> [23 lines of output]
+      Traceback (most recent call last):
+        File "<string>", line 2, in <module>
+          exec(compile('''
+          ~~~~^^^^^^^^^^^^
+          # This is <pip-setuptools-caller> -- a caller that pip uses to run setup.py
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          ...<31 lines>...
+          exec(compile(setup_py_code, filename, "exec"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          ''' % ('/tmp/pip-install-n3rowuia/matplotlib_e3bd1e09ec2c4b3bbb1f34907978345a/setup.py',), "<pip-setuptools-caller>", "exec"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "<pip-setuptools-caller>", line 34, in <module>
+        File "/tmp/pip-install-n3rowuia/matplotlib_e3bd1e09ec2c4b3bbb1f34907978345a/setup.py", line 52, in <module>
+          __version__ = versioneer.get_version()
+        File "/tmp/pip-install-n3rowuia/matplotlib_e3bd1e09ec2c4b3bbb1f34907978345a/versioneer.py", line 1410, in get_version
+          return get_versions()["version"]
+                 ~~~~~~~~~~~~^^
+        File "/tmp/pip-install-n3rowuia/matplotlib_e3bd1e09ec2c4b3bbb1f34907978345a/versioneer.py", line 1344, in get_versions
+          cfg = get_config_from_root(root)
+        File "/tmp/pip-install-n3rowuia/matplotlib_e3bd1e09ec2c4b3bbb1f34907978345a/versioneer.py", line 401, in get_config_from_root
+          parser = configparser.SafeConfigParser()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      AttributeError: module 'configparser' has no attribute 'SafeConfigParser'. Did you mean: 'RawConfigParser'?
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+× Encountered error while generating package metadata.
+╰─> See above for output.
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

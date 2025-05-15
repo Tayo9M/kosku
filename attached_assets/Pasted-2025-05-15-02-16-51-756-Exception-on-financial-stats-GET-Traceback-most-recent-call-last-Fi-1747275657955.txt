@@ -1,0 +1,41 @@
+2025-05-15 02:16:51,756: Exception on /financial_stats [GET]
+Traceback (most recent call last):
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/Tayo9M/sistem-pencatatan-penginapan-kos/./routes.py", line 812, in financial_stats
+    plt.tight_layout()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/pyplot.py", line 2312, in tight_layout
+    return gcf().tight_layout(pad=pad, h_pad=h_pad, w_pad=w_pad, rect=rect)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/figure.py", line 3236, in tight_layout
+    kwargs = get_tight_layout_figure(
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/tight_layout.py", line 320, in get_tight_layout_figure
+    kwargs = _auto_adjust_subplotpars(fig, renderer,
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/tight_layout.py", line 82, in _auto_adjust_subplotpars
+    bb += [ax.get_tightbbox(renderer, for_layout_only=True)]
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/axes/_base.py", line 4628, in get_tightbbox
+    bb_xaxis = self.xaxis.get_tightbbox(
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/axis.py", line 1105, in get_tightbbox
+    self._update_label_position(renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/axis.py", line 2083, in _update_label_position
+    bboxes, bboxes2 = self._get_tick_boxes_siblings(renderer=renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/axis.py", line 1881, in _get_tick_boxes_siblings
+    tlb, tlb2 = axis._get_tick_bboxes(ticks_to_draw, renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/axis.py", line 1085, in _get_tick_bboxes
+    return ([tick.label1.get_window_extent(renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/axis.py", line 1085, in <listcomp>
+    return ([tick.label1.get_window_extent(renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/text.py", line 910, in get_window_extent
+    bbox, info, descent = self._get_layout(self._renderer)
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/matplotlib/text.py", line 378, in _get_layout
+    xmin = corners_rotated[:, 0].min()
+  File "/home/Tayo9M/venv/lib/python3.9/site-packages/numpy/core/_methods.py", line 44, in _amin
+    return umr_minimum(a, axis, None, out, keepdims, initial, where)
+RecursionError: maximum recursion depth exceeded while calling a Python object

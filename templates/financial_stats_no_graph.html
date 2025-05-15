@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block title %}Statistik Keuangan (Tanpa Grafik){% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Statistik Keuangan - {{ property.name }} ({{ year }})</h1>
+    
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Ringkasan Tahun {{ year }}</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Pendapatan:</strong> Rp. {{ "{:,.0f}".format(yearly_income) }}</p>
+            <p><strong>Total Pengeluaran:</strong> Rp. {{ "{:,.0f}".format(yearly_expense) }}</p>
+            <p><strong>Laba/Rugi:</strong> Rp. {{ "{:,.0f}".format(yearly_profit) }}</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Detail Per Bulan</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Bulan</th>
+                        <th>Pendapatan</th>
+                        <th>Pengeluaran</th>
+                        <th>Laba/Rugi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in monthly_data %}
+                    <tr>
+                        <td>{{ data.month }}</td>
+                        <td>Rp. {{ "{:,.0f}".format(data.income) }}</td>
+                        <td>Rp. {{ "{:,.0f}".format(data.expense) }}</td>
+                        <td {% if data.profit < 0 %}class="text-danger"{% endif %}>
+                            Rp. {{ "{:,.0f}".format(data.profit) }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="mt-3">
+        <a href="{{ url_for('reports') }}" class="btn btn-secondary">Kembali</a>
+    </div>
+</div>
+{% endblock %}

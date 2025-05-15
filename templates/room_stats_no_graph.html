@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% block title %}Statistik Kamar (Tanpa Grafik){% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Statistik Penggunaan Kamar - {{ property.name }}</h1>
+    
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Informasi Kamar</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Kamar:</strong> {{ total_rooms }}</p>
+            <p><strong>Kamar Terisi:</strong> {{ occupied_rooms }}</p>
+            <p><strong>Tingkat Hunian:</strong> {{ "%.2f"|format(occupancy_rate) }}%</p>
+        </div>
+    </div>
+    
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Statistik Berdasarkan Tipe Kamar</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Tipe Kamar</th>
+                        <th>Jumlah Kamar</th>
+                        <th>Terisi</th>
+                        <th>Tingkat Hunian</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for room_type in room_types_data %}
+                    <tr>
+                        <td>{{ room_type.type }}</td>
+                        <td>{{ room_type.total }}</td>
+                        <td>{{ room_type.occupied }}</td>
+                        <td>{{ "%.2f"|format(room_type.occupancy_rate) }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Detail Kamar</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nomor Kamar</th>
+                        <th>Tipe</th>
+                        <th>Status</th>
+                        <th>Terakhir Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for room in rooms %}
+                    <tr>
+                        <td>{{ room.number }}</td>
+                        <td>{{ room.room_type }}</td>
+                        <td>{{ room.status }}</td>
+                        <td>{{ room.created_at.strftime('%Y-%m-%d') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="mt-3">
+        <a href="{{ url_for('reports') }}" class="btn btn-secondary">Kembali</a>
+    </div>
+</div>
+{% endblock %}
